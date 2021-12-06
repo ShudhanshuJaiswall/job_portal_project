@@ -1,0 +1,21 @@
+{% extends "app/admin/base1.html" %}
+{% block  content %}
+<form action="{% url 'verify' pk=request.session.id %}" method="POST">
+    {% csrf_token %}
+    <center>
+        <label for="inputEmail" style="color: rgb(20, 22, 10);">Company Verify</label>
+        <br>
+        <div class="form-floating mb-3">
+            <select name="verify" id="" class="form-select" style="color: rgb(22, 17, 17);">
+                <option>====Select Options====</option>
+                <option>True</option>
+                <option>False</option>
+            </select>
+            <br><br><br>
+        <div class="mt-4 mb-0">
+            <button type="submit" value="save" class="btn btn-primary">save</button>
+        </div>
+        </div>
+    </center>
+</form>
+{% endblock %}

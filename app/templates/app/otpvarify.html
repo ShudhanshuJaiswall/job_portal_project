@@ -1,0 +1,93 @@
+{% load static  %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="author" content="Jobboard">
+    <title>JobBoard</title>    
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{% static '/assets/img/favicon.png' %}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static '/assets/css/bootstrap.min.css' %}" type="text/css">    
+    <link rel="stylesheet" href="{% static '/assets/css/jasny-bootstrap.min.css' %}" type="text/css">  
+    <link rel="stylesheet" href="{% static '/assets/css/bootstrap-select.min.css' %}" type="text/css">  
+    <link rel="stylesheet" href="{% static '/assets/css/signup.scss' %}" type="text/scss">
+    <link rel="stylesheet" href="{% static '/assets/css/sign.css' %}" type="text/css">
+    <!-- Material CSS -->
+    <link rel="stylesheet" href="{% static '/assets/css/material-kit.css' %}" type="text/css">
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="{% static '/assets/fonts/font-awesome.min.css' %}" type="text/css"> 
+    <link rel="stylesheet" href="{% static '/assets/fonts/themify-icons.css' %}"> 
+
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="{% static '/assets/extras/animate.css' %}" type="text/css">
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="{% static '/assets/extras/owl.carousel.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static '/assets/extras/owl.theme.css' %}" type="text/css">
+    <!-- Rev Slider CSS -->
+    <link rel="stylesheet" href="{% static '/assets/extras/settings.css' %}" type="text/css">
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="{% static '/assets/css/main.css' %}" type="text/css">
+    <!-- Slicknav js -->
+    <link rel="stylesheet" href="{% static '/assets/css/slicknav.css' %}" type="text/css">
+    <!-- Responsive CSS Styles -->
+    <link rel="stylesheet" href="{% static '/assets/css/responsive.css' %}" type="text/css">
+
+    <!-- Color CSS Styles  -->
+    <link rel="stylesheet" type="text/css" href="{% static '/assets/css/colors/red.css' %}" media="screen" />
+    
+  </head>
+<body>
+  <div class="form">
+  <ul class="tab-group">
+    <li class="tab active"><a href="#otp">OTP Verification</a></li>
+  </ul>
+  <div class="tab-content">
+  <div id="login">   
+      <h1>OTP verification</h1>
+      <center>
+        {% if msg %}
+            <h4 style="color: red;">{{msg}}</h4>
+        {% endif %}
+      </center>
+      <form class="login-form" action="{% url 'otp' %}" method="POST">
+          {% csrf_token %}
+          <div class="field-wrap">
+              <label>
+                <span class="req"></span>
+              </label>
+              <input type="email" name="email" value="{{email}}" readonly>
+          </div>
+        <div class="field-wrap">
+          <label>
+            your OTP<span class="req">*</span>
+          </label>
+          <input type="text"  name="otp" required autocomplete="off"/>
+        </div>
+        <button class="button button-block"/>Verify</button>
+      </form>
+  </div> <!-- /form -->
+  
+        <script type="text/javascript" src="{% static '/assets/js/jquery-min.js' %}"></script>  
+        <script type="text/javascript" src="{% static '/assets/js/sign.js' %}"></script>    
+        <script type="text/javascript" src="{% static '/assets/js/bootstrap.min.js' %}"></script>    
+        <script type="text/javascript" src="{% static '/assets/js/material.min.js' %}"></script>
+        <script type="text/javascript" src="{% static '/assets/js/material-kit.js' %}"></script>
+        <script type="text/javascript" src="{% static '/assets/js/jquery.parallax.js' %}"></script>
+        <script type="text/javascript" src="{% static '/assets/js/owl.carousel.min.js' %}"></script>
+        <script type="text/javascript" src="{% static '/assets/js/jquery.slicknav.js' %}"></script>
+        <script type="text/javascript" src="{% static '/assets/js/main.js' %}"></script>
+        <script type="text/javascript" src="{% static '/assets/js/jquery.counterup.min.js' %}"></script>
+        <script type="text/javascript" src="{% static '/assets/js/waypoints.min.js' %}"></script>
+        <script type="text/javascript" src="{% static '/assets/js/jasny-bootstrap.min.js' %}"></script>
+        <script type="text/javascript" src="{% static '/assets/js/bootstrap-select.min.js' %}"></script>
+        <script type="text/javascript" src="{% static '/assets/js/form-validator.min.js' %}"></script>
+        <script type="text/javascript" src="{% static '/assets/js/contact-form-script.js' %}"></script>    
+        <script type="text/javascript" src="{% static '/assets/js/jquery.themepunch.revolution.min.js' %}"></script>
+        <script type="text/javascript" src="{% static '/assets/js/jquery.themepunch.tools.min.js' %}"></script>
+</body>
+</html>
