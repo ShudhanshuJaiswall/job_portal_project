@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-cx(y%7ku)pan&13ich5imziv9mk-g78g*35$&%ta6vmv9g69j&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['jobportall']
 
 
 # Application definition
